@@ -1,4 +1,4 @@
-require 'app/models/modules/ingredient_methods'
+require './app/models/modules/ingredient_methods'
 
 class RecipeIngredient < ApplicationRecord
 include IngredientMethods
