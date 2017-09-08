@@ -13,7 +13,7 @@ ingredient3 = Ingredient.create(category: category, name: Faker::Food.unique.ing
 
 300.times do
   count += 1
-  name = "#{Faker::GameOfThrones.unique.character}#{((1..1000).to_a).sample}"
+  name = "#{Faker::GameOfThrones.unique.character}#{((1..10).to_a).sample}"
   description = Faker::HitchhikersGuideToTheGalaxy.quote
   user = User.create(name: name, email: "#{name}@raven.com", password_digest: '123')
   recipe = Recipe.create(user_id: rand(0..count), description: Faker::Food.dish)

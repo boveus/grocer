@@ -28,11 +28,11 @@ describe Pantry do
 
   describe "class methods" do
     it "can generate a list of ingredients with a count" do
-        expect(@pantry.ingredient_list.first.name).to eq('pork ribs')
-        expect(@pantry.ingredient_list.second.measurement).to eq('number of')
-        expect(@pantry.ingredient_list.first.number).to eq(1)
-        expect(@pantry.ingredient_list.second.number).to eq(3)
-        expect(@pantry.ingredient_list.length).to eq(2)
+      expect(@pantry.ingredient_list.first.name).to eq('pork ribs')
+      expect(@pantry.ingredient_list.second.measurement).to eq('number of')
+      expect(@pantry.ingredient_list.first.number).to eq(1)
+      expect(@pantry.ingredient_list.second.number).to eq(3)
+      expect(@pantry.ingredient_list.length).to eq(2)
     end
   end
 end
