@@ -1,11 +1,13 @@
 class IngredientCalculator
-  def initialize(user, recipes, pantry)
-    @recipes = user.recipes
-    @pantry = user.pantry
+  def initialize(recipe_ids, user)
+    @user = user
+    @recipe_ids = recipe_ids
   end
 
-  def find_recipe
-    User.where(id: 1).joins(:recipes).joins(:recipe_ingredients).select('recipe_ingredients.number as ingredient_data').joins(:ingredients).select('ingredients.measurement as ingredient_data').first.ingredient_data
-    user.recipes.joins(:recipe_ingredients).select('recipe_ingredients.number as total')
-  end
+  #you can pass this an array of ids instead of a particular id
+  # this gets you ALL of the ingredients.
+  #now i just need to sum them.
+
+
+
 end
