@@ -9,4 +9,11 @@ class Recipe < ApplicationRecord
     .select('recipe_ingredients.number as number,
     ingredients.measurement as measurement, ingredients.name as name')
   end
+
+  def self.ingredient_lists(id_list)
+    where(id: id_list)
+    .joins(:ingredients)
+    .select('recipe_ingredients.number as number,
+    ingredients.measurement as measurement, ingredients.name as name')
+  end
 end
