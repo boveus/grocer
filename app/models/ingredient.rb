@@ -13,4 +13,8 @@ class Ingredient < ApplicationRecord
   def amount_for(recipe_id)
     recipe_ingredients.where(recipe: recipe_id).first.number
   end
+
+  def amount_for_pantry(pantry_id)
+    pantry_ingredients.where(pantry: pantry_id).first.number
+  end
 end

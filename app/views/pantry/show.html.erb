@@ -1,0 +1,8 @@
+<%= "#{@user.name}'s Pantry'" %>
+<br />
+<br />
+<% @ingredients_list.each do |ingredient| %>
+<%= "#{ingredient.amount_for_pantry(params[:id])} #{ingredient.name_and_measurement}" %>
+<br />
+<br />
+<% end %>
