@@ -48,9 +48,11 @@ class RecipesController < ApplicationController
     redirect_to user_recipes_path(user)
   end
 
+
   private
 
   def this_user
     User.find(params[:user_id])
   end
+
 end
