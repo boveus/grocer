@@ -2,5 +2,13 @@
 <br />
 <% @recipe.ingredients.each do |ingredient| %>
 <%= "#{ingredient.amount_for(params[:id])} #{ingredient.name_and_measurement}" %>
+<%= link_to "delete", user_recipe_recipe_ingredient_path(@user, @recipe,
+@recipe.recipe_ingredients.find_by(recipe_id: @recipe.id,
+ingredient_id: ingredient.id)), :method  => :delete %>
 <br />
 <% end %>
+
+<br />
+<%= render partial: "ingredient_form" %>
+
+<%= link_to "Back to recipes", user_recipes_path(@user.id) %>
