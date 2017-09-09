@@ -3,7 +3,7 @@
 <br />
 <% @recipes.each do |recipe| %>
 <%= link_to " #{recipe.description}", user_recipe_path(@user.id, recipe.id) %>
-<%= link_to "delete", user_recipe_path(@user, recipe), :method => :delete %>
+<%= link_to "delete", user_recipe_path(@user.id, recipe.id), :method => :delete %>
 <br />
 <br />
 <% end %>

@@ -42,6 +42,8 @@ class RecipesController < ApplicationController
   def destroy
     user = this_user
     recipe = Recipe.find(params[:id])
+    recipe_ingredients = RecipeIngredient.find_by(recipe_id: recipe.id)
+    recipe_ingredients.destroy
     Recipe.destroy(recipe.id)
     redirect_to user_recipes_path(user)
   end
