@@ -1,0 +1,6 @@
+<%= "#{@recipe.description}" %>
+<br />
+<% @recipe.ingredients.each do |ingredient| %>
+<%= "#{ingredient.amount_for(params[:id])} #{ingredient.name_and_measurement}" %>
+<br />
+<% end %>
