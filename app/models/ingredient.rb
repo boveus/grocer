@@ -6,6 +6,8 @@ class Ingredient < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :measurement, presence: true
 
+  accepts_nested_attributes_for :recipe_ingredients, allow_destroy: true
+
   def name_and_measurement
     "#{measurement} #{name}"
   end

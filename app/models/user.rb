@@ -7,4 +7,6 @@ has_many :pantry_ingredients, through: :pantry
 
 validates :name, :email, :password_digest, presence: true
 validates :email, uniqueness: true
+
+
 end
