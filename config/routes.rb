@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # get '/', to: 'main#home', as: 'home'
   get '/login', to: 'sessions#new', as: 'user_login'
   post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
   get '/home/:user_id', to: 'users#home', as: 'user_home'
   get '/home/:user_id/choose_recipes', to: 'grocery_lists#choose_recipes', as: 'user_choose_recipes'
   post '/home/:user_id/choose_recipes', to: 'grocery_lists#create_grocery_list', as: 'create_grocery_list'
