@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :recipes do
       resources :recipe_ingredients, only: [:destroy]
     end
-    resources :pantry, only: [:show] do
+    resources :pantry, only: [:show, :update] do
       resources :pantry_ingredients, only: [:destroy]
     end
   end

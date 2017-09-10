@@ -15,7 +15,7 @@ class Pantry < ApplicationRecord
   def self.add_grocery_to_pantry(number, measurement, name, category_id, pantry_id)
     ingredient = Ingredient.find_or_create_by(name: name, measurement: measurement,
     category_id: category_id)
-    PantryIngredient.find_or_create_by(pantry_id, ingredient_id: ingredient.id,
+    PantryIngredient.find_or_create_by(pantry_id: pantry_id, ingredient_id: ingredient.id,
     number: number)
   end
 end

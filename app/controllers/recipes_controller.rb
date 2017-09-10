@@ -15,7 +15,7 @@ class RecipesController < ApplicationController
   end
 
   def update
-    user = User.find(params[:user_id])
+    user = this_user
     recipe = Recipe.find(params[:id])
 
     category_title = params["recipe"]["ingredient"]["category"]
