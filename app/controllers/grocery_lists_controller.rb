@@ -14,6 +14,7 @@ class GroceryListsController < ApplicationController
   end
 
   def show
+    @user = this_user
     @grocery_list = this_user.grocery_list
   end
 end

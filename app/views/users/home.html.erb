@@ -1,8 +1,6 @@
 <%= "#{@user.name}'s home page" %>
 <br />
 <%= link_to "My recipes", user_recipes_path(@user.id) %>
-<br  />
-<%= link_to "New recipe", new_user_recipe_path(@user.id) %>
 <br />
 <%= link_to "My pantry", user_pantry_path(@user.id, @user.pantry.id) %>
 <br />

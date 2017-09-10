@@ -12,3 +12,5 @@ ingredient_id: ingredient.id)), :method  => :delete %>
 <%= render partial: "ingredient_form" %>
 
 <%= link_to "Back to recipes", user_recipes_path(@user.id) %>
+
+<%= link_to "Back home", user_home_path(@user.id) %>

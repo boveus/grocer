@@ -7,3 +7,9 @@
 <br />
 <br />
 <% end %>
+
+<br />
+<%= link_to "New recipe", new_user_recipe_path(@user.id) %>
+<br />
+
+<%= link_to "Back home", user_home_path(@user.id) %>

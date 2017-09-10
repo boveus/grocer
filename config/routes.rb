@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'main#home'
   # get '/', to: 'main#home', as: 'home'
-  get '/home/:user_id', to: 'user#home', as: 'user_home'
+  get '/login', to: 'sessions#new', as: 'user_login'
+  post '/login', to: 'sessions#create'
+  get '/home/:user_id', to: 'users#home', as: 'user_home'
   get '/home/:user_id/choose_recipes', to: 'grocery_lists#choose_recipes', as: 'user_choose_recipes'
   post '/home/:user_id/choose_recipes', to: 'grocery_lists#create_grocery_list', as: 'create_grocery_list'
   get '/home/:user_id/grocery_list', to: 'grocery_lists#show', as: 'user_grocery_list'
