@@ -1,4 +1,7 @@
 <%= form_tag(create_grocery_list_path, method: 'post', :id => 'recipe-select') do %>
+  <%= label_tag(:title, "Grocery List Title") %>
+  <%= text_field_tag(:title) %>
+  <br />
   <% @recipes.each do |recipe| %>
     <%= recipe.description %>
     <%= check_box_tag "recipes[]", recipe.id  -%>

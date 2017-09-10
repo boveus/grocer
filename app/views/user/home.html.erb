@@ -5,3 +5,7 @@
 <%= link_to "New recipe", new_user_recipe_path(@user.id) %>
 <br />
 <%= link_to "My pantry", user_pantry_path(@user.id, @user.pantry.id) %>
+<br />
+<%= link_to "Create Grocery List", user_choose_recipes_path(@user.id) %>
+<br / />
+<%= link_to "My grocery list", user_grocery_list_path(@user.id) %>

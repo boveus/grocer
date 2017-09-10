@@ -1,8 +1,6 @@
 class GroceryList < ApplicationRecord
   belongs_to :user
-  has_many :grocery_ingredients
-  has_many :ingredients, through: :grocery_ingredients
-
+  store :list
 
   def self.compute_recipe_hash(recipe_ingredients)
     recipe_hash = {}
