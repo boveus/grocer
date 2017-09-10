@@ -17,16 +17,14 @@ class RecipesController < ApplicationController
   def update
     user = User.find(params[:user_id])
     recipe = Recipe.find(params[:id])
-    category_title = params["recipe"]["ingredient"]["category"]
-    ingredient_measurement = params["recipe"]["ingredient"]["measurement"]
-    ingredient_name = params["recipe"]["ingredient"]["name"]
-    ingredient_number = params["recipe"]["recipe_ingredient"]["number"]
 
-    category = Category.find_or_create_by(title: category_title)
-    ingredient = Ingredient.find_or_create_by(name: ingredient_name,
-    measurement: ingredient_measurement, category: category)
-    RecipeIngredient.find_or_create_by(recipe_id: recipe.id,
-    ingredient_id: ingredient.id, number: ingredient_number)
+    category_title = params["recipe"]["ingredient"]["category"]
+    measurement = params["recipe"]["ingredient"]["measurement"]
+    name = params["recipe"]["ingredient"]["name"]
+    number = params["recipe"]["recipe_ingredient"]["number"]
+
+    Recipe.add_grocery_to_recipe(
+    category_title, name, measurement, recipe, number)
     redirect_to user_recipe_path(user, recipe)
   end
 

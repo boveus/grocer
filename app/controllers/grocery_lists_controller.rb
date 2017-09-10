@@ -4,8 +4,7 @@ class GroceryListsController < ApplicationController
   end
 
   def create_grocery_list
-    ingredient_list = Recipe.ingredient_lists(params[:recipes])
-    binding.pry
-    @grocery_list = GroceryList.new
+    recipe_ingredient_list = Recipe.ingredient_lists(params[:recipes])
+    pantry_ingredient_list = this_user.pantry.ingredient_list
   end
 end
