@@ -1,16 +1,19 @@
 <h4> Create a new grocery list </h4>
 <div class="form">
 <%= form_tag(create_grocery_list_path, method: 'post', :id => 'recipe-select') do %>
-  <%= label_tag(:title, "Grocery List Title") %>
+  <a> <%= label_tag(:title, "Grocery List Title") %> </a>
   <%= text_field_tag(:title) %>
   <br />
+  <br />
   <% @recipes.each do |recipe| %>
-    <%= recipe.description %>
+    <a> <%= recipe.description %> </a>
     <%= check_box_tag "recipes[]", recipe.id  -%>
     <br />
   <% end %>
+  <br />
   <%= button_to "Generate Grocery List", create_grocery_list_path %>
 <% end %>
 </div>
+<br />
 
 <%= link_to "Back home", user_home_path(@user.id), class: 'link' %>

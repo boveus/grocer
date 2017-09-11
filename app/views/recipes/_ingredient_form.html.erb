@@ -1,17 +1,20 @@
 <div class="form">
 <%= form_for [@user, @recipe] do |f| %>
  <%= f.fields_for :recipe_ingredient do |ri| %>
-   <%= ri.label "number of" %>
+   <a> <%= ri.label "number of" %> </a>
    <%= ri.number_field :number %>
    <% end %>
  <%= f.fields_for :ingredient do |ff| %>
-   <%= ff.label :measurement %>
+   <a> <%= ff.label :measurement %> </a>
    <%= ff.text_field :measurement %>
-   <%= ff.label 'name' %>
+   <a> <%= ff.label 'name' %> </a>
    <%= ff.text_field :name %>
-   <%= ff.label :category %>
+   <a> <%= ff.label :category %> </a>
    <%= ff.text_field :category %>
-   <% end %> <br />
+   <% end %>
+   <br />
    <%= f.submit "Add Ingredient to #{@recipe.description}" %>
+  <br />
+  <br />
 <% end %>
 </div>

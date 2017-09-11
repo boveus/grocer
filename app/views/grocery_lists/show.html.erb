@@ -1,6 +1,6 @@
 <h4> <%= @grocery_list.title %> </h4>
 <% @grocery_list.list.each do |ingredient, number| %>
-  <%= "#{number} #{ingredient}" %>
+  <a> <%= "#{number} #{ingredient}" %> </a>
   <br />
 <% end %>
 

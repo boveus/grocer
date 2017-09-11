@@ -1,9 +1,6 @@
-<%= "#{@user.name}'s Pantry'" %>
-<br />
-<br />
+<h4> <%= "#{@user.name}'s Pantry" %> </h4>
 <% @ingredients_list.each do |ingredient| %>
-<%= "#{ingredient.amount_for_pantry(params[:id])} #{ingredient.name_and_measurement}" %>
-<br />
+<a> <%= "#{ingredient.amount_for_pantry(params[:id])} #{ingredient.name_and_measurement}" %> </a>
 <%= link_to "delete", user_pantry_pantry_ingredient_path(@user, @pantry,
 @pantry.pantry_ingredients.find_by(pantry_id: @pantry.id,
 ingredient_id: ingredient.id)), :method  => :delete , class: 'link' %>

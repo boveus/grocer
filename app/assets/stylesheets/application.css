@@ -28,7 +28,7 @@
    color: darkgreen;
    display: inline-block;
    position: relative;
-   text-decoration: overline;
+   text-decoration: none;
    font: 15px arial, sans-serif
  }
 
@@ -38,6 +38,12 @@
    overflow: scroll;
    background-color: snow;
  }
+a {
+  color: black;
+  font: 14px arial, sans-serif;
+  text-decoration: none;
+  text-shadow: 1px 0px black;
+}
 
 h4 {
   color: black;

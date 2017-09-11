@@ -1,15 +1,15 @@
 <div class="form">
 <%= form_for [@user, @pantry] do |f| %>
  <%= f.fields_for :pantry_ingredient do |ri| %>
-   <%= ri.label "number of" %>
+   <a> <%= ri.label "number of" %> </a>
    <%= ri.number_field :number %>
    <% end %>
  <%= f.fields_for :ingredient do |ff| %>
-   <%= ff.label :measurement %>
+   <a> <%= ff.label :measurement %>  </a>
    <%= ff.text_field :measurement %>
-   <%= ff.label 'of' %>
+   <a> <%= ff.label 'of' %>  </a>
    <%= ff.text_field :name %>
-   <%= ff.label :category %>
+   <a> <%= ff.label :category %>  </a>
    <%= ff.text_field :category %>
    <% end %> <br />
    <%= f.submit "Add Ingredient to your pantry" %>
