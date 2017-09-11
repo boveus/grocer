@@ -1,12 +1,12 @@
 <div class="form">
 <%= form_for @user do |f| %>
-  <%= f.label "Name" %>
+  <a> <%= f.label "Name" %> </a>
   <%= f.text_field :name %>
   <br />
-  <%= f.label "E-mail / User name" %>
+  <a> <%= f.label "E-mail / User name" %> </a>
   <%= f.text_field :email %>
   <br />
-  <%= f.label "password" %>
+  <a> <%= f.label "password" %> </a>
   <%= f.password_field :password %>
   <br />
   <%= f.submit "Create Account" %>

@@ -1,9 +1,11 @@
+<h4> User Login </h4>
+
 <div class="form">
 <%= form_for(:session, url: login_path) do |f| %>
-  <%= f.label "Username / email" %>
+  <a> <%= f.label "Username / email" %>
   <%= f.text_field :email %>
   <br />
-  <%= f.label :password %>
+  <a> <%= f.label :password %> </a>
   <%= f.password_field :password %>
   <br />
   <%= f.submit "Login" %>
