@@ -1,3 +1,4 @@
+<h4>Create an account</h4>
 <div class="form">
 <%= form_for @user do |f| %>
   <a> <%= f.label "Name" %> </a>
@@ -12,3 +13,5 @@
   <%= f.submit "Create Account" %>
 <% end %>
 </div>
+<br />
+<%= link_to "Back home", root_path, class: 'link' %>
