@@ -7,16 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 count = 0
   category = Category.create(title: Faker::File.extension)
-ingredient = Ingredient.create(category: category, name: Faker::Food.unique.ingredient, measurement: 'pounds of' )
-ingredient2 = Ingredient.create(category: category, name: Faker::Food.unique.ingredient, measurement: 'pounds of' )
-ingredient3 = Ingredient.create(category: category, name: Faker::Food.unique.ingredient, measurement: 'pounds of' )
 
-300.times do
+30.times do
   count += 1
-  name = "#{Faker::GameOfThrones.unique.character}#{((1..10).to_a).sample}"
-  description = Faker::HitchhikersGuideToTheGalaxy.quote
-  user = User.create(name: name, email: "#{name}@raven.com", password_digest: '123')
+  name = "#{Faker::GameOfThrones.unique.character}"
+  user = User.create(name: name, email: "#{name.delete(' ')}@raven.com", password: '123')
+  user.grocery_list = GroceryList.create(title: "You haven't created a grocery list yet.", user: user)
   recipe = Recipe.create(user_id: rand(0..count), description: Faker::Food.dish)
+  ingredient = Ingredient.create(category: category, name: Faker::Food.unique.ingredient, measurement: 'pounds of' )
+  ingredient2 = Ingredient.create(category: category, name: Faker::Food.unique.ingredient, measurement: 'cans of' )
+  ingredient3 = Ingredient.create(category: category, name: Faker::Food.unique.ingredient, measurement: 'ounces of' )
   RecipeIngredient.create(recipe: recipe, ingredient_id: ingredient.id, number: rand(1..5))
   RecipeIngredient.create(recipe: recipe, ingredient_id: ingredient2.id, number: rand(1..5))
   RecipeIngredient.create(recipe: recipe, ingredient_id: ingredient3.id, number: rand(1..5))

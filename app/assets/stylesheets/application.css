@@ -45,6 +45,13 @@ a {
   text-shadow: 1px 0px black;
 }
 
+.recipe {
+  color: black;
+  font: 20px arial, sans-serif;
+  text-decoration: none;
+  text-shadow: 1px 0px black;
+}
+
 h4 {
   color: black;
   font: 22px arial, sans-serif;
