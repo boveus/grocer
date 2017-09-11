@@ -1,4 +1,6 @@
 class GroceryListsController < ApplicationController
+  before_action :require_user
+
   def choose_recipes
     @recipes = this_user.recipes
     @user = this_user
@@ -6,6 +8,7 @@ class GroceryListsController < ApplicationController
   end
 
   def create_grocery_list
+    @user = this_user
     recipe_ingredients = Recipe.ingredient_lists(params[:recipes])
     pantry_ingredients = this_user.pantry.ingredient_list
     grocery_hash = GroceryList.generate_recipe_hash(recipe_ingredients, pantry_ingredients)

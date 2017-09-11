@@ -13,3 +13,65 @@
  *= require_tree .
  *= require_self
  */
+
+.form {
+  display: inline-block;
+  margin-left: 50px;
+}
+
+ .eqi-container {
+   display: flex;
+   justify-content: space-between;
+ }
+
+ .link {
+   color: darkgreen;
+   display: inline-block;
+   position: relative;
+   text-decoration: overline;
+   font: 15px arial, sans-serif
+ }
+
+ #main {
+   display: flex;
+   flex: 1;
+   overflow: scroll;
+   background-color: snow;
+ }
+
+h4 {
+  color: black;
+  font: 22px arial, sans-serif;
+  text-decoration: none;
+  text-shadow: 1px 0px black;
+}
+
+ header > a {
+   color: black;
+   font: 22px arial, sans-serif;
+   text-decoration: none;
+   text-shadow: 1px 0px black;
+ }
+
+ header, footer {
+   text-align: center;
+   background: forestgreen;
+   height: 5vh;
+ }
+
+ article {
+   text_align: center;
+   font: 18px arial, sans-serif;
+ }
+
+
+ header, footer, article{
+   padding: 1em;
+ }
+
+ body {
+   display: flex;
+   min-height: 100vh;
+   flex-direction: column;
+   margin: 0;
+ }

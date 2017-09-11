@@ -1,3 +1,4 @@
+<div class="form">
 <%= form_for [@user, @pantry] do |f| %>
  <%= f.fields_for :pantry_ingredient do |ri| %>
    <%= ri.label "number of" %>
@@ -13,3 +14,4 @@
    <% end %> <br />
    <%= f.submit "Add Ingredient to your pantry" %>
 <% end %>
+</div>

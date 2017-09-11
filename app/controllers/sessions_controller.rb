@@ -6,7 +6,8 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: params[:session][:email])
     if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
-      flash[:notice] = "Successful login"
+      session[:logged_in] = true
+      flash[:notice] = "Welcome #{@user.name}"
       redirect_to user_home_path(@user)
     else
       flash[:notice] = "Invalid Login"

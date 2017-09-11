@@ -1,9 +1,9 @@
-<%= "#{@user.name}'s home page" %>
+<h4> <%= "#{@user.name}'s home page" %> </h4>
 <br />
-<%= link_to "My recipes", user_recipes_path(@user.id) %>
+<%= link_to "My recipes", user_recipes_path(@user.id), class: 'link' %>
 <br />
-<%= link_to "My pantry", user_pantry_path(@user.id, @user.pantry.id) %>
+<%= link_to "My pantry", user_pantry_path(@user.id, @user.pantry.id), class: 'link' %>
 <br />
-<%= link_to "Create Grocery List", user_choose_recipes_path(@user.id) %>
+<%= link_to "Create Grocery List", user_choose_recipes_path(@user.id), class: 'link' %>
 <br / />
-<%= link_to "My grocery list", user_grocery_list_path(@user.id) %>
+<%= link_to "My grocery list", user_grocery_list_path(@user.id), class: 'link' %>

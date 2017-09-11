@@ -6,11 +6,11 @@
 <br />
 <%= link_to "delete", user_pantry_pantry_ingredient_path(@user, @pantry,
 @pantry.pantry_ingredients.find_by(pantry_id: @pantry.id,
-ingredient_id: ingredient.id)), :method  => :delete %>
+ingredient_id: ingredient.id)), :method  => :delete , class: 'link' %>
 <br />
 <% end %>
 
 <%= render partial: "ingredient_form" %>
 
-
-<%= link_to "Back home", user_home_path(@user.id) %>
+<br />
+<%= link_to "Back home", user_home_path(@user.id) , class: 'link'%>

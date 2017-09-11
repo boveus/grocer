@@ -12,6 +12,13 @@
     <% flash.each do |type, message| %>
       <%= content_tag :div, message, class: "flash_#{type}" %>
     <% end %>
+    <% if current_user %>
+      <h4> <%= current_user.name %> is logged in </h4>
+      <%= link_to "Logout", logout_path, method: :delete, class: 'link'%>
+    <% else %>
+    <br />
+    <br />
+    <% end %>
     <%= yield %>
   </body>
 </html>

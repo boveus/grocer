@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+
+  before_action :require_user, :except => [:create, :new]
+
+
   def home
     @user = User.find(params[:user_id])
   end
@@ -11,6 +15,7 @@ class UsersController < ApplicationController
     @user = User.new(user_attributes)
     if @user.save
       session[:user_id] = @user.id
+      session[:logged_in] = true
       flash[:notice] = "Successful login"
       @user.pantry = Pantry.create(user: @user)
       @user.grocery_list = GroceryList.create(title: "You haven't created a grocery list yet.", user: @user)

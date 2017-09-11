@@ -1,3 +1,4 @@
+<div class="form">
 <%= form_for [@user, @recipe] do |f| %>
  <%= f.fields_for :recipe_ingredient do |ri| %>
    <%= ri.label "number of" %>
@@ -13,3 +14,4 @@
    <% end %> <br />
    <%= f.submit "Add Ingredient to #{@recipe.description}" %>
 <% end %>
+</div>

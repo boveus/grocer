@@ -1,3 +1,5 @@
+<h4> Create a new grocery list </h4>
+<div class="form">
 <%= form_tag(create_grocery_list_path, method: 'post', :id => 'recipe-select') do %>
   <%= label_tag(:title, "Grocery List Title") %>
   <%= text_field_tag(:title) %>
@@ -9,5 +11,6 @@
   <% end %>
   <%= button_to "Generate Grocery List", create_grocery_list_path %>
 <% end %>
+</div>
 
-<%= link_to "Back home", user_home_path(@user.id) %>
+<%= link_to "Back home", user_home_path(@user.id), class: 'link' %>

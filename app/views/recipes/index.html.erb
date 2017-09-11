@@ -2,14 +2,14 @@
 <br />
 <br />
 <% @recipes.each do |recipe| %>
-<%= link_to " #{recipe.description}", user_recipe_path(@user.id, recipe.id) %>
-<%= link_to "delete", user_recipe_path(@user.id, recipe.id), :method => :delete %>
+<%= link_to " #{recipe.description}", user_recipe_path(@user.id, recipe.id), class: 'link' %>
+<%= link_to "delete", user_recipe_path(@user.id, recipe.id), :method => :delete, class: 'link' %>
 <br />
 <br />
 <% end %>
 
 <br />
-<%= link_to "New recipe", new_user_recipe_path(@user.id) %>
+<%= link_to "New recipe", new_user_recipe_path(@user.id), class: 'link' %>
 <br />
-
-<%= link_to "Back home", user_home_path(@user.id) %>
+<br />
+<%= link_to "Back home", user_home_path(@user.id), class: 'link'%>

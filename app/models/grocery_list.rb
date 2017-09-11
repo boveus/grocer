@@ -26,7 +26,7 @@ class GroceryList < ApplicationRecord
       if recipe_hash["#{measurement} of #{name}"]
         recipe_hash["#{measurement} of #{name}"] -= number
       end
-      if recipe_hash["#{measurement} of #{name}"] <= 0
+      if recipe_hash["#{measurement} of #{name}"] && recipe_hash["#{measurement} of #{name}"] <= 0
         recipe_hash.delete("#{measurement} of #{name}")
       end
     end
